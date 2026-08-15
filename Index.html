@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pour toi mon coeur ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Étoiles -->
+    <div id="stars"></div>
+
+
+    <!-- =========================
+         ÉCRAN D'ACCUEIL
+    ========================== -->
+
+    <section class="screen intro active" id="intro">
+
+        <div class="small">
+            💌 Une petite surprise pour toi...
+        </div>
+
+        <h1>
+            Pour la personne<br>
+            qui compte énormément pour moi ❤️
+        </h1>
+
+        <p>
+            J'ai préparé quelque chose de spécialement pour toi Chelie Miora🙃<br>
+            mais avant de lui ouvrir lance d'abord la musique🙏🥺
+        </p>
+
+        <button class="openButton" id="startButton">
+            Ouvre-moi ❤️
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN ENVELOPPE
+    ========================== -->
+
+    <section class="screen envelopeScreen" id="envelopeScreen">
+
+        <div class="envelopeTitle">
+            💕 Clique sur l'enveloppe 💕
+        </div>
+
+
+        <div class="envelope" id="envelope">
+
+            <div class="envelopeBody"></div>
+
+
+            <!-- Lettre -->
+
+            <div class="letter">
+
+                <h2>
+                    🎂 Joyeux anniversaire ❤️
+                </h2>
+
+                <p>
+                    Aujourd'hui est un jour vraiment spécial...
+                </p>
+
+                <p>
+                    Parce que c'est le jour où une personne
+                    merveilleuse est née. 🥺💕
+                </p>
+
+                <p>
+                    Je te souhaite énormément de bonheur,
+                    de réussite, de sourires et que tes rêves
+                    deviennent réalité.
+                </p>
+
+                <p>
+                    Merci d'être dans ma vie et de rendre
+                    mes journées encore plus belles. ❤️
+                </p>
+
+                <p class="signature">
+                    Je t'aime énormément. 💖
+                 <br><br>
+
+                    Ton mec Sylvio 🥺🤍
+                </p>
+
+            </div>
+
+
+            <!-- Enveloppe -->
+
+            <div class="left"></div>
+
+            <div class="right"></div>
+
+            <div class="bottom"></div>
+
+            <div class="flap"></div>
+
+
+            <!-- Coeur -->
+
+            <div class="envelopeHeart">
+                ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Bouton continuer -->
+
+    <button
+        class="continueButton"
+        id="continueButton">
+
+        J'ai encore quelque chose pour toi 💕
+    </button>
+
+
+    <!-- =========================
+         ÉCRAN FINAL
+    ========================== -->
+
+    <section class="screen final" id="final">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+        <h1>
+            Joyeux anniversaire mon coeur 🎉🎂
+        </h1>
+
+        <p>
+            Peu importe ce que la vie nous réserve,
+            je veux simplement continuer à voir ton sourire,
+            partager de beaux moments avec toi
+            et créer encore beaucoup de souvenirs. 🥺❤️
+        </p>
+        <div  class="photos">
+         <img
+           src="images/photo1.jpeg"
+           alt="Notre souvenirs🤍"
+         >
+         <img
+           src="images/photo2.jpg"
+           alt="Notre souvenirs🤍"
+         >
+
+        </div>
+
+        <br>
+
+        <p>
+            Ces moments avec toi sont  précieux pour moi. 💕
+        </p>
+
+        <br>
+
+        <h2>
+            Je t'aime ❤️
+        </h2>
+
+    </section>
+
+
+    <!-- Bouton musique -->
+
+    <button
+        class="musicButton"
+        id="musicButton">
+
+        🎵
+    </button>
+
+
+    <!--
+        Si tu ajoutes une musique appelée musique.mp3
+        dans le même dossier que index.html,
+        décommente ceci :
+    -->
+
+    <audio id="music" loop>
+        <source src="musique.mp3" type="audio/mpeg">
+    </audio>
+
+    
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

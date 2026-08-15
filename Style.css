@@ -1,0 +1,763 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffb6c9,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ff758c,
+            #ff7eb3,
+            #b76de5
+        );
+
+    color: white;
+}
+
+
+/* =========================
+   ÉTOILES
+========================= */
+
+#stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.star {
+    position: absolute;
+
+    color: white;
+
+    animation:
+        sparkle 2s infinite alternate;
+}
+
+
+@keyframes sparkle {
+
+    from {
+        opacity: .15;
+
+        transform:
+            scale(.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1.3);
+    }
+}
+
+
+/* =========================
+   ÉCRANS
+========================= */
+
+.screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 1s ease;
+}
+
+
+.screen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+
+    flex-direction: column;
+}
+
+
+.intro .small {
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+
+.intro h1 {
+
+    font-size: 34px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 4px 15px rgba(0,0,0,.25);
+}
+
+
+.intro p {
+
+    font-size: 17px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Bouton */
+
+.openButton {
+
+    border: none;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #e75480;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.2);
+
+    transition: .3s;
+}
+
+
+.openButton:hover {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================
+   ENVELOPPE
+========================= */
+
+.envelopeScreen {
+
+    flex-direction: column;
+}
+
+
+.envelopeTitle {
+
+    margin-bottom: 35px;
+
+    font-size: 24px;
+
+    text-shadow:
+        0 3px 10px rgba(0,0,0,.2);
+}
+
+
+.envelope {
+
+    position: relative;
+
+    width: 310px;
+
+    height: 210px;
+
+    cursor: pointer;
+}
+
+
+/* Corps */
+
+.envelopeBody {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #f7f3f4;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.25);
+
+    overflow: hidden;
+}
+
+
+/* Gauche */
+
+.left {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-top:
+        105px solid transparent;
+
+    border-bottom:
+        105px solid transparent;
+
+    border-left:
+        155px solid #efaab6;
+
+    z-index: 4;
+}
+
+
+/* Droite */
+
+.right {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-top:
+        105px solid transparent;
+
+    border-bottom:
+        105px solid transparent;
+
+    border-right:
+        155px solid #efaab6;
+
+    z-index: 4;
+}
+
+
+/* Partie basse */
+
+.bottom {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        155px solid transparent;
+
+    border-right:
+        155px solid transparent;
+
+    border-bottom:
+        125px solid #e99aa8;
+
+    z-index: 5;
+}
+
+
+/* Rabat */
+
+.flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        155px solid transparent;
+
+    border-right:
+        155px solid transparent;
+
+    border-top:
+        125px solid #ffb6c1;
+
+    transform-origin: top;
+
+    transition:
+        transform 1s ease;
+
+    z-index: 7;
+}
+
+
+/* =========================
+   COEUR
+========================= */
+
+.envelopeHeart {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 53%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 50px;
+
+    z-index: 8;
+
+    transition: .5s;
+
+    filter:
+        drop-shadow(
+            0 5px 5px rgba(0,0,0,.2)
+        );
+}
+
+
+.envelope:hover .envelopeHeart {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.15);
+}
+
+
+/* =========================
+   LETTRE
+========================= */
+
+.letter {
+
+    position: absolute;
+
+    width: 289px;
+
+    min-height: 200px;
+
+    left: 12px;
+
+    bottom: 20px;
+
+    background: #fffaf5;
+
+    color: #555;
+
+    padding: -5px 22px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.3);
+
+    opacity: 0;
+
+    transform:
+        translateY(0);
+
+    transition:
+        transform 1.3s ease,
+        opacity .7s ease;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.letter h2 {
+
+    color: #e75480;
+
+    margin-bottom: 10px;
+
+    font-size: 22px;
+}
+
+
+.letter p {
+
+    line-height: 1.5;
+
+    font-size: 14px;
+
+    margin-bottom: 14px;
+}
+
+
+.signature {
+
+    margin-top: 18px;
+
+    color: #e75480;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ENVELOPPE OUVERTE
+========================= */
+
+.envelope.open .flap {
+
+    transform:
+        rotateX(180deg);
+
+    z-index: 1;
+}
+
+
+.envelope.open .letter {
+
+    opacity: 1;
+
+    transform:
+        translateY(-245px);
+
+    pointer-events: auto;
+
+    z-index: 10;
+}
+
+
+.envelope.open .envelopeHeart {
+
+    opacity: 0;
+}
+
+
+/* =========================
+   BOUTON CONTINUER
+========================= */
+
+.continueButton {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border: none;
+
+    padding: 13px 28px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #e75480;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .5s;
+
+    z-index: 30;
+}
+
+
+.continueButton.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   ÉCRAN FINAL
+========================= */
+
+.final {
+
+    flex-direction: column;
+
+    padding: 30px;
+}
+
+
+.final .bigHeart {
+
+    font-size: 80px;
+
+    animation:
+        heartbeat 1.2s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.2);
+    }
+}
+
+
+.final h1 {
+
+    font-size: 34px;
+
+    margin: 20px 0;
+
+    text-shadow:
+        0 4px 15px rgba(0,0,0,.25);
+}
+
+
+.final p {
+
+    max-width: 500px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   COEURS FLOTTANTS
+========================= */
+
+.floatingHeart {
+
+    position: fixed;
+
+    bottom: -40px;
+
+    pointer-events: none;
+
+    animation:
+        floatUp 5s linear forwards;
+
+    z-index: 50;
+}
+
+
+@keyframes floatUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            translateX(var(--move))
+            rotate(25deg)
+            scale(1.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MUSIQUE
+========================= */
+
+.musicButton {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.9);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .intro h1 {
+
+        font-size: 28px;
+    }
+
+
+    .intro p {
+
+        font-size: 15px;
+    }
+
+
+    .envelope {
+
+        transform:
+            scale(.88);
+    }
+
+
+    .letter {
+
+        width: 280px;
+    }
+
+
+    .final h1 {
+
+        font-size: 28px;
+    }
+
+
+    .final p {
+
+        font-size: 15px;
+    }
+    /* =========================
+   PHOTOS DE LA FIN
+========================= */
+
+.photos {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.photos img {
+    width: 125px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border: 6px solid white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.25);
+
+    transition: .5s;
+}
+
+/* Première photo */
+
+.photos img:first-child {
+    transform: rotate(-6deg);
+}
+
+/* Deuxième photo */
+
+.photos img:last-child {
+    transform: rotate(6deg);
+}
+
+/* Animation au survol */
+
+.photos img:hover {
+    transform:
+        rotate(0deg)
+        scale(1.08);
+}
+
+}
