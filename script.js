@@ -13,7 +13,13 @@ const envelopeScreen =
 
 
 startButton.addEventListener("click", function () {
+  music.play();
 
+            musicPlaying = true;
+
+            musicButton.innerHTML =
+                "🔊";
+   
     intro.classList.remove("active");
 
     envelopeScreen.classList.add("active");
