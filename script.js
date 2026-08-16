@@ -13,12 +13,14 @@ const envelopeScreen =
 
 
 startButton.addEventListener("click", function () {
-  music.play();
-
+  music.play()
+        .then(() => {
             musicPlaying = true;
-
-            musicButton.innerHTML =
-                "🔊";
+            musicButton.innerHTML = "🔊";
+        })
+        .catch(error => {
+            console.error("Erreur de lecture :", error);
+        });
    
     intro.classList.remove("active");
 
